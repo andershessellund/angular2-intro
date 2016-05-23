@@ -10,7 +10,7 @@ import {TodoListComponent} from "./todo-list.component.ts";
 
 @Component({
     selector: 'app',
-    template: '<todomvc></todomvc>',
+    template: '<todo-list></todo-list>',
     providers: [TodoService],
     directives: [TodoListComponent]
 })

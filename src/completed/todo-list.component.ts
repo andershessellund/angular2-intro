@@ -12,7 +12,7 @@ export enum TodoFilter {
 }
 
 @Component({
-    selector: 'todomvc',
+    selector: 'todo-list',
     template: template,
     directives: [RouterLink, TodoItem]
 })
