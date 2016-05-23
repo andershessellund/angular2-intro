@@ -4,6 +4,11 @@ declare module "/src/initial/todo-list.component.html" {
     export default template;
 }
 
+declare module "/src/initial/todo-item.component.html" {
+    let template: string;
+    export default template;
+}
+
 declare module 'uuid' {
     export function v4(): string;
 }
