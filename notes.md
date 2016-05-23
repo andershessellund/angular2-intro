@@ -13,17 +13,6 @@
 [class.completed]="todo.completed"
 ```
 
-## 3. Add trackBy
-```javascript
-    trackByTodos(todo: Todo) {
-        return todo.id;
-    }
-```
-
-``` html
-; trackBy:trackByTodos
-```
-
 ## 4. Toggle completed
 ```html
 [(ngModel)]="todo.completed"
@@ -50,6 +39,18 @@ Update todo-list.component.html:
 ```html
 [(ngModel)]="newTodoText"
 (ngSubmit)=addTodo()
+```
+
+## 6. Remove todo
+```typescript
+    removeTodo(todoToRemove: Todo) {
+        this.visibleTodos = this.visibleTodos.filter(
+            todo => todo.id !== todoToRemove.id);
+    }
+```
+
+```html
+(click)="removeTodo(todo)"
 ```
 
 ## 6. Separate TodoItem component
@@ -86,11 +87,14 @@ directives: [TodoItem]
 Update todo-list.component.html
 ```html
 <todo-item (onRemove)="removeTodo($event)" [todo]="todo"
-*ngFor="let todo of visibleTodos; trackBy:trackByTodos"></todo-item>
+*ngFor="let todo of visibleTodos></todo-item>
 ```
 
 ## 7. Use router
-Switch to new base. Introduce the service, which is RxJS based. Examine the TodoListComponent. Examine the new AppComponent.
+Switch to new base. 
+Introduce the service, which is RxJS based. 
+Examine the TodoListComponent. 
+Examine the new AppComponent.
 
 Add router module and choose LocationStrategy
 ```typescript
