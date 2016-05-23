@@ -10,7 +10,7 @@
         <input id="toggle-all" class="toggle-all" type="checkbox" [checked]="isAllCompleted()" (click)="markAll()">
         <label for="toggle-all">Mark all as complete</label>
         <ul class="todo-list">
-            <todo-item *ngFor="let todo of visibleTodos; trackBy:trackByTodos"
+            <todo-item *ngFor="let todo of visibleTodos"
                        [todo]="todo"
             (onRemove)="removeTodo($event)"
             (onToggle)="toggleCompleted($event)"

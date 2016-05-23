@@ -1,4 +1,3 @@
-import {Injectable} from '@angular/core';
 import uuid = require('uuid');
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
@@ -9,7 +8,6 @@ export interface Todo {
 }
 
 
-@Injectable()
 export class TodoService {
 
     todos:BehaviorSubject<Todo[]> = new BehaviorSubject([]);
