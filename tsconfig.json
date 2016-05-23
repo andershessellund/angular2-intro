@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"emitDecoratorMetadata": true,
+    	"experimentalDecorators": true,
+        "moduleResolution": "node"
+	},
+    "exclude": ["jspm_packages", "node_modules", "dist", "typings/main.d.ts", "typings/main"]
+}

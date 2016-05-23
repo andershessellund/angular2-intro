@@ -1,0 +1,13 @@
+<li [class.completed]="todo.completed"
+    [class.editing]="isEditing()">
+    <div class="view">
+        <input class="toggle" type="checkbox"
+               (change)="onToggle.emit(todo)" [ngModel]="todo.completed">
+        <label (dblclick)="beginEditing()">{{todo.title}}</label>
+        <button class="destroy" (click)="onRemove.emit(todo)"></button>
+    </div>
+    <form (ngSubmit)="doneEditing()" *ngIf="isEditing()">
+        <input class="edit" [(ngModel)]="editedTodoText" (blur)="doneEditing()"
+               focusOnLoad (keyup.escape)="cancelEditing()">
+    </form>
+</li>

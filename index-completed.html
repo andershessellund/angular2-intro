@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <base href="/">
+    <script src="jspm_packages/system.src.js"></script>
+    <script src="jspm.browser.js"></script>
+    <script src="jspm.config.js"></script>
+    <script src="build/polyfills.js"></script>
+    <script src="build/tools.js"></script>
+    <script src="build/bundle.js"></script>
+</head>
+
+<body>
+<app></app>
+</body>
+<script type="text/javascript">
+    System.trace = true;
+
+    System.import('reflect-metadata');
+    System.import('jspm_packages/npm/zone.js@0.6.12');
+    System.import("src/completed/bootstrap")
+            .then(function () {
+                console.log('running');
+            })
+            .catch(function (err) {
+                console.log('Error: ', err);
+            });
+</script>
+</html>

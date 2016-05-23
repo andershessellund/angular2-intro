@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>TypeScript course</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="lib/reveal/css/reveal.css">
+    <link rel="stylesheet" href="lib/reveal/css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/reveal/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'lib/reveal/css/print/pdf.css' : 'lib/reveal/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+        <!-- Custom styling -->
+    <style>
+        .reveal {
+            font-size: 34px;
+        }
+        .reveal h1 {
+            font-size: 2.1em;
+            text-transform: none;
+        }
+
+        .reveal p {
+            text-align: left;
+        }
+        .reveal pre {
+            font-size: 0.7em;
+        }
+        .reveal .slides > section {
+            padding-top: 5px;
+        }
+        .reveal section > ul {
+            display: block;
+            margin-left: 50px;
+        }
+        .reveal section pre.smaller > code {
+            font-size: 70%;
+            line-height: 120%;
+        }
+        .reveal pre > code {
+            max-height: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Diving into AngularJS 2</h1>
+
+                <p style="text-align: center;">
+                    <small>Anders Hessellund Jensen</small>
+                </p>
+            </section>
+            <section>
+                <h1>What is AngularJS 2?</h1>
+                <ul>
+                    <li>A JavaScript framework for building web apps</li>
+                    <li class="fragment">Batteries included (big)</li>
+                    <li class="fragment">Made by Google</li>
+                    <li class="fragment">Open source (Apache 2 license).</li>
+                    <li class="fragment">Developed in TypeScript (but TypeScript is not required for
+                        your own apps)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h1>Application Architecture</h1>
+                <img src="img/angular2-app-architecture.png">
+            </section>
+            <section>
+                <h1>Programming language?</h1>
+                <ul>
+                    <li class="fragment">TypeScript</li>
+                    <li class="fragment">JavaScript (ES5)</li>
+                    <li class="fragment">ES6 classes + ES7 decorators</li>
+                    <li class="fragment">Dart</li>
+                </ul>
+            </section>
+            <section>
+                <h1>To TypeScript or not to TypeScript?</h1>
+                <p>&quot;I think that JavaScript’s <em>loose typing</em> is one of its <em>best
+                    features</em> and that <em>type checking</em> is <em>way overrated</em>.
+                    TypeScript <em>adds sweetness</em>, but at a price. It is not a price I am
+                    willing to pay.&quot;</p>
+                <p> - <em>Douglas Crockford, author of JavaScript: The Good Parts</em></p>
+            </section>
+            <section>
+                <h1>Relationship to Angular1</h1>
+                <p>NG2 follows the same high-level architechture as NG1:</p>
+                <ul>
+                    <li class="fragment">Templating</li>
+                    <li class="fragment">Two-way binding with automatic dirty checking</li>
+                    <li class="fragment">Components</li>
+                    <li class="fragment">Directives</li>
+                    <li class="fragment">Pipes (same concept as filters in NG1)</li>
+                    <li class="fragment">Dependency Injection</li>
+                </ul>
+                <p class="fragment">However, there are huge differences in the technical details:</p>
+                <ul>
+                    <li class="fragment">Templating is different</li>
+                    <li class="fragment">RxJS observables instead of promises</li>
+                    <li class="fragment">DI is much powerful</li>
+                    <li class="fragment">Dirty-checking uses ZoneJS and is more customizable</li>
+                </ul>
+            </section>
+            <section>
+                <h1>The app</h1>
+                <p>I am going to show you how to implement the TodoMVC app, a famous app
+                implemented in a lot of different programming languages and browsers.</p>
+                <ul>
+                    <li class="fragment">Sufficiently complex to demo basic features.</li>
+                    <li class="fragment"><strong>Not</strong> sufficiently complex to demo
+                    how different approaches <em>scale</em>.</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script src="lib/reveal/lib/js/head.min.js"></script>
+<script src="lib/reveal/js/reveal.js"></script>
+<script>
+    // Full list of configuration options available at:
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide',
+
+				dependencies: [
+					{ src: 'lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal/plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+</script>
+
+</html>
