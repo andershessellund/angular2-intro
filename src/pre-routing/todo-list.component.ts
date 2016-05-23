@@ -88,10 +88,6 @@ export class TodoListComponent implements OnInit {
         this.todoService.markAll(!this.isAllCompleted());
     }
 
-    trackByTodos(todo: Todo) {
-        return todo.id;
-    }
-
     setFilter(filter: TodoFilter) {
         this.filter = filter;
         this.updateTodos(this.todoService.todos.value);
