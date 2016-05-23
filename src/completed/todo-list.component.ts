@@ -90,6 +90,10 @@ export class TodoListComponent implements OnInit {
         this.todoService.markAll(!this.isAllCompleted());
     }
 
+    trackByTodos(todo: Todo) {
+        return todo.id;
+    }
+
     private updateTodos(allTodos:Todo[]) {
         const completedTodos = allTodos.filter(todo=>todo.completed);
         const activeTodos = allTodos.filter(todo => !todo.completed);
