@@ -24,10 +24,6 @@ let todos = [{
   id: uuid.v4(),
   title: 'Create a TODO app',
   completed: false
-}, {
-  id: uuid.v4(),
-  title: 'Tell the world about it',
-  completed: false
 }];
 
 // get list of all todos
